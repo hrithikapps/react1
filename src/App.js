@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import List from './Components/List.jsx';
 import './App.css';
 
 function App() {
+  let info=[
+    {brands:"Android"},
+    {brands:"Blackberry"},
+    {brands:"iPhone"},
+    {brands:"Windows Phone"},
+  ];
+
+  let info2=[
+    {brands:"Samsung"},
+    {brands:"HTC"},
+    {brands:"Micromax"},
+    {brands:"Apple"},
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Mobile Operating System</h1>
+      {info.map((e)=>(
+        <div>
+        <ul key={e.index}>
+          
+          <List {...e} />
+        
+         </ul>
+        </div>
+      ))}
+
+<div className="App">
+      <h1>Mobile Operating System</h1>
+      {info2.map((e)=>(
+        <div>
+        <ul key={e.index}>
+          {
+            <ul><ul><List {...e} /></ul></ul>
+            
+          }
+
+         </ul>
+        </div>
+      ))}
+      </div>
+
+
     </div>
   );
 }
